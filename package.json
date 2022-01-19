@@ -1,0 +1,35 @@
+{
+  "name": "prbot",
+  "version": "1.0.0",
+  "description": "Prb discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N4thou/Prbot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "nodejs"
+  ],
+  "author": "Nathanael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/N4thou/Prbot/issues"
+  },
+  "homepage": "https://github.com/N4thou/Prbot#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.0",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "ffmpeg-static": "^4.3.0",
+    "yt-search": "^2.8.0",
+    "ytdl-core": "^4.8.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0"
+  }
+}
