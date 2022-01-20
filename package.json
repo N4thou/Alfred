@@ -1,35 +1,38 @@
 {
-  "name": "prbot",
+  "name": "alfred",
   "version": "1.0.0",
-  "description": "Prb discord bot",
+  "description": "discord bot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/N4thou/Prbot.git"
+    "url": "git+https://github.com/N4thou/Alfred.git"
   },
   "keywords": [
     "discord",
-    "bot",
-    "nodejs"
+    "bot"
   ],
-  "author": "Nathanael",
+  "author": "N4thou",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/N4thou/Prbot/issues"
+    "url": "https://github.com/N4thou/Alfred/issues"
   },
-  "homepage": "https://github.com/N4thou/Prbot#readme",
+  "homepage": "https://github.com/N4thou/Alfred#readme",
   "dependencies": {
-    "@discordjs/opus": "^0.5.0",
-    "discord.js": "^12.5.3",
-    "dotenv": "^10.0.0",
-    "ffmpeg-static": "^4.3.0",
-    "yt-search": "^2.8.0",
-    "ytdl-core": "^4.8.2"
-  },
-  "devDependencies": {
-    "eslint": "^7.27.0"
+    "@discordjs/builders": "^0.11.0",
+    "@discordjs/opus": "^0.7.0",
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.6.0",
+    "dotenv": "^14.2.0",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.4.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "install": "^0.13.0",
+    "npm": "^8.3.1",
+    "yt-search": "^2.10.3",
+    "ytdl-core": "^4.10.0"
   }
 }
