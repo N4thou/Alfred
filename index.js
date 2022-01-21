@@ -25,6 +25,7 @@ client.once('ready', () => {
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
+	console.log(interaction);
 
 	const command = client.commands.get(interaction.commandName);
 
@@ -38,7 +39,7 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-//events handler
+//event handler
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
