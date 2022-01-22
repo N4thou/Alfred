@@ -7,10 +7,9 @@ const { Client, Collection, Intents } = require('discord.js');
 const dotenv = require('dotenv');
 dotenv.config();
 // create a new Discord client
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
 
 //commands handler
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -23,7 +22,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.on('interactionCreate', async interaction => {
+/*client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 	console.log(interaction);
 
@@ -37,7 +36,7 @@ client.on('interactionCreate', async interaction => {
 		console.error(error);
 		return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
-});
+});*/
 
 //event handler
 
