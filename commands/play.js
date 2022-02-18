@@ -101,7 +101,7 @@ const video_player = async (guild, song,player,interaction) => {
 	// If no song is left in the server queue. Leave the voice channel and delete the key and value pair from the global queue.
 	if (!song) {
 		const connection = joinVoiceChannel({
-						channelId: voiceChannel.id,
+						channelId: interaction.member.voice.channel.id,
 						guildId:  interaction.guild.id,
 						adapterCreator: interaction.guild.voiceAdapterCreator,
 					});
