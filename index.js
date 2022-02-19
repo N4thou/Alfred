@@ -62,12 +62,18 @@ client.login(process.env.DISCORD_TOKEN);
 
 
 function intervalFunc() {
-  console.log('Cant stop me now!');
+  console.log('Qui est la ?');
   //console.log(client.channels.cache);
   
   const channelListe = client.channels.cache;
   for (const channels of channelListe) {
-	console.log(channels[1].isVoice());
+	//console.log(channels[1].isVoice());
+	if(channels[1].isVoice()){
+		const memberListe = channels[1].members;
+		for (const members of memberListe){
+			console.log(members[0]);
+		}
+	}
   }
 }
 
