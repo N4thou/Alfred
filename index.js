@@ -22,6 +22,12 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
+/*
+client.once(`voiceStateUpdate`, () => {
+        console.log(`Update! ${client.voiceStateUpdate}`);
+});
+*/
+
 /*client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 	console.log(interaction);
@@ -53,3 +59,19 @@ for (const file of eventFiles) {
 
 // login to Discord with your app's token
 client.login(process.env.DISCORD_TOKEN);
+
+
+function intervalFunc() {
+  console.log('Cant stop me now!');
+  //console.log(client.channels.cache);
+  
+  const channelListe = client.channels.cache;
+  for (const channels of channelListe) {
+	console.log(channels[1].isVoice());
+  }
+}
+
+setInterval(intervalFunc, 10000);
+
+
+
