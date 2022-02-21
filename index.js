@@ -60,24 +60,49 @@ for (const file of eventFiles) {
 // login to Discord with your app's token
 client.login(process.env.DISCORD_TOKEN);
 
+const listePresence = new Map();
+
 
 function intervalFunc() {
   console.log('Qui est la ?');
   //console.log(client.channels.cache);
-  
   const channelListe = client.channels.cache;
+
+  //parcours les channel de tout les serveur ou le bot est connecte
   for (const channels of channelListe) {
 	//console.log(channels[1].isVoice());
+
+	//verifie si le channel est un channel vocal
 	if(channels[1].isVoice()){
 		const memberListe = channels[1].members;
+		
+		//établit la liste de toute les personnes connecte dans les channel vocaux
 		for (const members of memberListe){
 			console.log(members[0]);
+			const memberID = members[0];
+
+			//recupere le solde de la personne connecte
+			const memberExist = listePresence.get(memberID);
+
+			//si le membre na pas de solde il faut le cree
+			if(!memberExist){
+				const member_constructor = {
+					ID:memberID,
+					solde:1,
+				};
+				listePresence.set(memberID,member_constructor);
+			}else{
+				memberExist.solde= memberExist.solde+1;
+				console.log(memberExist.solde); 
+			}
 		}
 	}
   }
+  let donnees = JSON.stringify(listePresence);
+  fs.writeFileSync('Solde.json',donnees);
 }
 
-setInterval(intervalFunc, 10000);
+setInterval(intervalFunc, 1500);
 
 
 
